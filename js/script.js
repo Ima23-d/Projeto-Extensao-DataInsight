@@ -15,3 +15,5 @@ function alternarTema() {
     const temaAtivo = document.body.classList.contains("tema-escuro");
     localStorage.setItem("tema", temaAtivo ? "escuro" : "claro");
 }
+
+

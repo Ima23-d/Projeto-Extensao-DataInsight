@@ -40,15 +40,45 @@
       <header class="pagina__cabecalho">
         <div class="migalhas">Início &gt; Relatórios</div>
         <h1 class="h1">Relatórios</h1>
-        <p class="p">Gere um resumo para imprimir ou exportar.</p>
+        <p class="p">Gere um relatório em PDF.</p>
       </header>
 
       <section class="cartao" aria-label="Ações de relatório">
         <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items:center;">
-          <p class="p">Clique Para Gerar Relatório.</p>
+          <p class="p">Selecione as configurações do seu PDF.</p>
+            <div class="grade grade--3" style="margin-top:16px;">
+              
+              <div class="campo">
+                <label for="tipo">Tipo de gráfico</label>
+                <select class="selecao" id="tipo">
+                  <option selected>Barras + Linha (comparativo)</option>
+                  <option>Histograma</option>
+                  <option>Linha</option>
+                  <option>Barras</option>
+                </select>
+              </div>
+            
+              <div class="campo">
+                <label for="periodo">Período</label>
+                <select class="selecao" id="periodo">
+                  <option>Todos</option>
+                  <option selected>Últimos 6 meses (simulado)</option>
+                  <option>Últimos 30 dias</option>
+                  <option>Personalizado</option>
+                </select>
+              </div>
+            
+              <div class="campo">
+                <label for="categoria">Categoria</label>
+                <select class="selecao" id="categoria">
+                  <option selected>Geral</option>
+                  <option>Exemplo A</option>
+                  <option>Exemplo B</option>
+                </select>
+              </div>
+            </div>
           <div style="display:flex; gap: 12px; flex-wrap: wrap;">
-            <button class="botao botao--primario" type="button">Gerar PDF</button>
-            <button class="botao botao-func" type="button" onclick="window.print()">Imprimir</button>
+            <button class="botao botao--primario" type="button"  onclick="window.print()">Gerar PDF</button>
           </div>
         </div>
       </section>
@@ -67,7 +97,7 @@
           <article class="cartao" style="box-shadow:none;">
             <h3 class="h3">Gráfico</h3>
             <div class="grafico" role="img" aria-label="Área reservada para gráfico no relatório">Área do gráfico</div>
-            <p class="p" style="margin-top:10px;">Descrição do gráfico para acessibilidade.</p>
+            <p class="p" style="margin-top:10px;">Descrição do gráfico.</p>
           </article>
         </div>
       </section>
@@ -99,7 +129,7 @@
 
     <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
       aria-controls="painelAcessibilidade">
-      ♿
+      <img src="img/Logo acessibilidade.png" alt="img-acessibilidade">
     </button>
   </div>
 

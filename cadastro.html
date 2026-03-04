@@ -32,17 +32,17 @@
       <form id="formularioCadastro" action="" method="POST" style="margin-top: 24px; display:grid; gap: 16px;">
         <div class="campo">
           <label for="nome">Nome</label>
-          <input class="entrada" id="nome" name="nome" type="text" autocomplete="name" required />
+          <input placeholder="Ex: Arthur" class="entrada" id="nome" name="nome" type="text" autocomplete="name" required />
         </div>
-
+        
         <div class="campo">
           <label for="email">Email</label>
-          <input class="entrada" id="email" name="email" type="email" autocomplete="email" required />
+          <input placeholder="Ex: xxxx@gmail.com" class="entrada" id="email" name="email" type="email" autocomplete="email" required />
         </div>
 
         <div class="campo">
           <label for="senha">Senha</label>
-          <input class="entrada" id="senha" name="senha" type="password" autocomplete="new-password" required
+          <input placeholder="Ex: Xxx20xx@" class="entrada" id="senha" name="senha" type="password" autocomplete="new-password" required
             aria-describedby="dica-senha" />
           <div id="dica-senha" class="ajuda">
             Dica: use no mínimo 8 caracteres.
@@ -51,12 +51,15 @@
 
         <div class="campo">
           <label for="confirmar">Confirmar senha</label>
-          <input class="entrada" id="confirmar" name="confirmar" type="password" autocomplete="new-password" required />
+          <input placeholder="Ex: Xxx20xx@" class="entrada" id="confirmar" name="confirmar" type="password" autocomplete="new-password" required />
         </div>
 
         <label class="linha">
-          <input id="termos" type="checkbox" required />
-          <span>Aceito os termos e a política de privacidade.</span>
+          <input id="termos" type="checkbox" required class="checkbox" />
+          Aceito os
+          <a href="#">termos</a>
+          e a
+          <a href="#">política de privacidade</a>.
         </label>
 
         <button class="botao botao--primario" type="submit" onclick="window.location.href='home.html'">Criar conta</button>
@@ -95,7 +98,7 @@
 
     <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
       aria-controls="painelAcessibilidade">
-      ♿
+      <img src="img/Logo acessibilidade.png" alt="img-acessibilidade">
     </button>
   </div>
 

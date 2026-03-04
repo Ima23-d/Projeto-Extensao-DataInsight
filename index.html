@@ -31,17 +31,17 @@
       <form action="" method="POST" style="margin-top: 24px; display: grid; gap: 16px;">
         <div class="campo">
           <label for="email">Email</label>
-          <input class="entrada" id="email" name="email" type="email" autocomplete="email" required />
+          <input placeholder="Ex: xxxx@gmail.com" class="entrada" id="email" name="email" type="email" autocomplete="email" required />
         </div>
 
         <div class="campo">
           <label for="senha">Senha</label>
-          <input class="entrada" id="senha" name="senha" type="password" autocomplete="current-password" required />
+          <input placeholder="Ex: Xxx20xx@" class="entrada" id="senha" name="senha" type="password" autocomplete="current-password" required />
         </div>
 
         <div style="display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap: wrap;">
           <label style="display:flex; align-items:center; gap:10px; color: var(--muted); font-weight:600;">
-            <input type="checkbox" name="lembrar" />
+            <input type="checkbox" name="lembrar" class="checkbox"/>
             Lembrar de mim
           </label>
 
@@ -83,7 +83,7 @@
 
     <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
       aria-controls="painelAcessibilidade">
-      ♿
+      <img src="img/Logo acessibilidade.png" alt="img-acessibilidade">
     </button>
   </div>
 
