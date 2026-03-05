@@ -74,6 +74,20 @@ body {
   width: var(--container);
   margin: 0 auto;
 }
+.rodape__interno{
+  background-color:#1a1a1a;
+  justify-content:center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction:column;
+  padding:20px;
+  color:white;
+}
+.rodape__interno a{
+  color: var(--primaria);
+
+}
 
 /* ============================
    BARRA DE TOPO
@@ -219,6 +233,10 @@ body {
     color: var(--primaria);
       text-decoration: none;
 }
+.obrigatorio::after{
+  content: " *";
+  color: red;
+}
 /* ============================
    PÁGINA
    ============================ */
@@ -276,6 +294,7 @@ body {
   border-radius: var(--raio);
   padding: var(--esp2);
   box-shadow: var(--sombra);
+
 }
 
 .cartao__meta{
