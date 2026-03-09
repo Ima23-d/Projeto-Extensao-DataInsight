@@ -1,4 +1,4 @@
-# 📊 DataVis Acessível - Visualização de Dados para Todos
+# 📊 DataInsight Acessível - Visualização de Dados para Todos
 
 [![Licença](https://img.shields.io/badge/Licença-MIT-green.svg)](LICENSE)
 [![Acessibilidade](https://img.shields.io/badge/Acessibilidade-AAA-yellow)]()
@@ -7,9 +7,9 @@
 
 ## 🎯 Sobre o Projeto
 
-**DataVis Acessível** é uma plataforma inovadora de visualização de dados projetada para ser **totalmente acessível** a todos os usuários, incluindo pessoas com deficiência visual, auditiva ou mobilidade reduzida. Nosso objetivo é democratizar o acesso à análise de dados, permitindo que profissionais de diversas áreas possam explorar informações complexas de forma intuitiva e inclusiva.
+**DataInsight Acessível** é uma plataforma inovadora de visualização de dados projetada para ser **totalmente acessível** a todos os usuários, incluindo pessoas com deficiência visual, auditiva ou mobilidade reduzida. Nosso objetivo é democratizar o acesso à análise de dados, permitindo que profissionais de diversas áreas possam explorar informações complexas de forma intuitiva e inclusiva.
 
-### 🌟 Por que DataVis Acessível?
+### 🌟 Por que DataInsight Acessível?
 
 - 🔍 **Visualização clara** de dados complexos
 - ♿ **Acessibilidade total** desde o início do projeto
@@ -45,4 +45,5 @@ Acessibilidade:
 ├── WCAG 2.1 (nível AAA)
 ├── ARIA labels
 ├── Navegação por teclado
+
 └── Suporte a leitores de tela
