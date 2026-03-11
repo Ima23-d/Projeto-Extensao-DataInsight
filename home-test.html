@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DataInsight • Início</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+         /* botão flutuante */
+  
+     .chatbot-btn {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       width: 60px;
+       height: 60px;
+       border-radius: 50%;
+       border: none;
+       background: #3B82F6;
+       color: white;
+       font-size: 24px;
+       cursor: pointer;
+       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+     }
+  
+     /* modal */
+  
+     .chatbot-modal {
+       position: fixed;
+       bottom: -500px;
+       right: 20px;
+       width: 320px;
+       height: 420px;
+       background: white;
+       border-radius: 12px;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+       display: flex;
+       flex-direction: column;
+       transition: 0.4s;
+     }
+  
+     /* quando abrir */
+  
+     .chatbot-modal.ativo {
+       bottom: 90px;
+     }
+  
+     .chat-header {
+       background: #3B82F6;
+       color: white;
+       padding: 10px;
+       display: flex;
+       justify-content: space-between;
+     }
+  
+     .chat-mensagens {
+       flex: 1;
+       padding: 10px;
+       overflow-y: auto;
+       font-size: 14px;
+     }
+  
+     .chat-input {
+       display: flex;
+       border-top: 1px solid #ddd;
+     }
+  
+     .chat-input input {
+       flex: 1;
+       padding: 10px;
+       border: none;
+     }
+  
+     .chat-input button {
+       padding: 10px;
+       border: none;
+       background: #3B82F6;
+       color: white;
+       cursor: pointer;
+     }
+  
+     .bot {
+       background: #f1f1f1;
+       padding: 8px;
+       border-radius: 6px;
+       margin-bottom: 8px;
+     }
+  
+     .user {
+       text-align: right;
+       margin-bottom: 8px;
+     }
+  </style>
+</head>
+
+<body>
+  <!-- <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a> -->
+
+  <header class="barra-topo" role="banner">
+    <div class="container barra-topo__interno">
+      <a class="marca" href="home.html" aria-label="DataInsight - Início">
+        <span class="marca__simbolo" aria-hidden="true">
+          <i class="fa-solid fa-chart-column"></i>
+        </span>
+        DataInsight
+      </a>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a href="home.html" aria-current="page">Início</a>
+        <a href="dados.html">Dados</a>
+        <a href="analises.html">Análises</a>
+        <a href="graficos.html">Gráficos</a>
+        <a href="relatorios.html">Relatórios</a>
+      </nav>
+
+      <div class="acoes">
+        <a class="botao botao--suave" href="configuracoes.html" aria-label="Abrir configurações"><i class="fa-solid fa-gear"></i></a>
+      </div> 
+
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina" role="main">
+    <div class="container">
+      <header class="pagina__cabecalho">
+        <div class="migalhas" aria-label="Você está em">Início</div>
+        <h1 class="h1">Visão geral</h1>
+        <p class="p">Métricas principais e um resumo visual dos seus dados.</p>
+      </header>
+
+      <section class="cartao" aria-label="Busca">
+        <form style="display:flex; gap: 12px; flex-wrap: wrap; align-items:center;">
+          <label for="busca" style="min-width: 120px;">Buscar</label>
+          <input class="entrada" id="busca" type="search" placeholder="Buscar por conjunto, coluna, etiqueta..." />
+          <button class="botao botao--primario" type="button">Pesquisar</button>
+        </form>
+      </section>
+
+      <section aria-label="Métricas" style="margin-top: 24px;">
+        <div class="grade grade--4">
+          <article class="cartao">
+            <div class="cartao__meta">Média</div>
+            <div class="cartao__valor">12,5</div>
+            <div class="cartao__descricao">Baseado em 30 registros</div>
+          </article>
+          <article class="cartao">
+            <div class="cartao__meta">Mediana</div>
+            <div class="cartao__valor">10</div>
+            <div class="cartao__descricao">Valor central dos dados</div>
+          </article>
+          <article class="cartao">
+            <div class="cartao__meta">Moda</div>
+            <div class="cartao__valor">8</div>
+            <div class="cartao__descricao">Valor que mais se repete</div>
+          </article>
+          <article class="cartao">
+            <div class="cartao__meta">Desvio padrão</div>
+            <div class="cartao__valor">3,2</div>
+            <div class="cartao__descricao">Dispersão em torno da média</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cartao" aria-label="Gráfico principal" style="margin-top: 24px;">
+        <h2 class="h2">Gráfico principal</h2>
+       <canvas id="graficoResumo"></canvas>
+      </section>
+
+      <section class="cartao" aria-label="Insights" style="margin-top: 24px;">
+        <h2 class="h2">Insight automático</h2>
+        <p class="p" style="margin-top: 8px;" >
+          “Os valores maiores estão puxando a média para cima.” (placeholder)
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <div class="container rodape__interno">
+      <span>© DataInsight</span>
+      <p>o site a seguir contém acessibilidade disponivel NIVEL AA segundo as diretrizes da WCAG 2.1</p>
+      <p>E-mail para contato: <a href="#">DataInsight@gmail.com</a>.</p>
+    </div>
+  </footer>
+
+  <div class="acessibilidade-flutuante" aria-label="Ferramentas de acessibilidade">
+    <div id="painelAcessibilidade" class="acessibilidade-painel" role="dialog" aria-modal="false"
+      aria-labelledby="tituloAcessibilidade">
+      <h2 id="tituloAcessibilidade" class="acessibilidade-titulo">Acessibilidade</h2>
+
+      <div class="acessibilidade-acoes">
+        <button class="botao botao--suave" type="button" id="botaoAumentar">Aumentar fonte</button>
+        <button class="botao botao--suave" type="button" id="botaoDiminuir">Diminuir fonte</button>
+        <button class="botao botao--suave" type="button" id="botaoLer">Ler página (voz)</button>
+        <button class="botao botao--suave" type="button" id="botaoParar">Parar leitura</button>
+      </div>
+
+      <p class="ajuda" style="margin:10px 0 0;">
+        Dica: use TAB para navegar e Enter/Espaço para ativar botões.
+      </p>
+    </div>
+
+    <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
+      aria-controls="painelAcessibilidade">
+      <img src="img/Logo acessibilidade.png" alt="img-acessibilidade">
+    </button>
+  </div>
+
+<button class="chatbot-btn" onclick="abrirChat()">💬</button>
+
+<!-- Modal do chatbot -->
+<div class="chatbot-modal" id="chatModal">
+
+  <div class="chat-header">
+    Assistente DataInsight
+    <button onclick="fecharChat()">✕</button>
+  </div>
+
+  <div class="chat-mensagens" id="chatMensagens">
+    <div class="bot">Olá 👋<br>Posso ajudar a interpretar os dados da tela.</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="chatPergunta" placeholder="Pergunte algo...">
+    <button onclick="enviarPergunta()">Enviar</button>
+  </div>
+
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+  <script src="acessibilidade/acessibilidade.js"></script>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    
+      function abrirChat() {
+        document.getElementById("chatModal").classList.add("ativo")
+      }
+
+      function fecharChat() {
+        document.getElementById("chatModal").classList.remove("ativo")
+      }
+
+      function enviarPergunta() {
+
+        const input = document.getElementById("chatPergunta")
+        const pergunta = input.value.toLowerCase()
+
+        const chat = document.getElementById("chatMensagens")
+
+        chat.innerHTML += `<div class="user">${pergunta}</div>`
+
+        let resposta = "Não entendi sua pergunta."
+
+        // IA simulada
+
+        if (pergunta.includes("media")) {
+          resposta = "A média representa o valor médio dos dados analisados."
+        }
+
+        else if (pergunta.includes("lucro")) {
+          resposta = "Para saber se houve lucro precisamos comparar receitas e despesas."
+        }
+
+        else if (pergunta.includes("45")) {
+          resposta = "Se a média for 45 significa que os valores analisados giram em torno desse número."
+        }
+
+        else if (pergunta.includes("desvio")) {
+          resposta = "O desvio padrão mostra o quanto os dados variam em relação à média."
+        }
+
+        chat.innerHTML += `<div class="bot">${resposta}</div>`
+
+        input.value = ""
+
+        chat.scrollTop = chat.scrollHeight
+
+      }
+  </script>
+
+</body>
+
+</html>
