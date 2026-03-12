@@ -3,7 +3,7 @@
 [![Licença](https://img.shields.io/badge/Licença-MIT-green.svg)](LICENSE)
 [![Acessibilidade](https://img.shields.io/badge/Acessibilidade-AA-yellow)]()
 [![VLibras](https://img.shields.io/badge/VLibras-Integrado-blue)](https://www.gov.br/governodigital/pt-br/vlibras)
-[![Responsivo](https://img.shields.io/badge/Responsivo-Sim-brightgreen)]()
+
 
 ## 🎯 Sobre o Projeto
 
@@ -55,4 +55,5 @@ Acessibilidade:
 ├── Navegação por teclado
 
 └── Suporte a leitores de tela
+
 
