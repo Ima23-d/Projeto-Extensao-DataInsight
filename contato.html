@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | DataInsight</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <header class="barra-topo">
+        <div class="container barra-topo__interno">
+
+            <a href="index.html" class="marca">
+                    <span class="marca__simbolo" aria-hidden="true">
+                    <i class="fa-solid fa-chart-column"></i>
+                    </span>
+                    DataInsight
+            </a>
+
+            <nav class="navegacao">
+                <a href="home.html">Home</a>
+                <a href="contato.html" aria-current="page">Contato</a>
+            </nav>
+
+        </div>
+    </header>
+    <main class="pagina">
+        <div class="container">
+
+            <header class="pagina__cabecalho">
+                <h1 class="h1">Contato</h1>
+                <p class="p">
+                    Entre em contato conosco para dúvidas, sugestões ou suporte sobre a plataforma DataInsight.
+                </p>
+            </header>
+
+
+            <div class="grade grade--2">
+                <section class="cartao">
+
+                    <h2 class="h2">Envie uma mensagem</h2>
+
+                    <form>
+
+                        <div class="campo">
+                            <label for="nome" class="obrigatorio">Nome</label>
+                            <input
+                                id="nome"
+                                class="entrada"
+                                type="text"
+                                placeholder="Digite seu nome"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email" class="obrigatorio">Email</label>
+                            <input
+                                id="email"
+                                class="entrada"
+                                type="email"
+                                placeholder="Digite seu email"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensagem" class="obrigatorio">Mensagem</label>
+                            <textarea
+                                id="mensagem"
+                                class="area-texto"
+                                placeholder="Digite sua mensagem"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="botao botao--primario">
+                            Enviar Mensagem
+                        </button>
+
+                    </form>
+
+                </section>
+                <aside class="cartao">
+
+                    <h2 class="h2">Informações de contato</h2>
+
+                    <p class="p">📧 Email: DataInsight@gmail.com</p>
+
+                    <p class="p">📞 Telefone: (82) 99999-9999</p>
+
+                    <p class="p">📍 Localização: Maceió - AL</p>
+
+                    <p class="p">
+                        Nosso sistema ajuda usuários a interpretar dados com mais facilidade
+                        através de dashboards e análises inteligentes.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="rodape" role="contentinfo">
+        <div class="container rodape__interno">
+        <span>© DataInsight</span>
+        <p>o site a seguir contém acessibilidade disponivel NIVEL AA segundo as diretrizes da WCAG 2.1</p>
+        <p>E-mail para contato: <a href="#">DataInsight@gmail.com</a>.</p>
+        </div>
+    </footer>
+
+    
+  <div class="acessibilidade-flutuante" aria-label="Ferramentas de acessibilidade">
+    <div id="painelAcessibilidade" class="acessibilidade-painel" role="dialog" aria-modal="false"
+      aria-labelledby="tituloAcessibilidade">
+      <h2 id="tituloAcessibilidade" class="acessibilidade-titulo">Acessibilidade</h2>
+
+      <div class="acessibilidade-acoes">
+        <button class="botao botao--suave" type="button" id="botaoAumentar">Aumentar fonte</button>
+        <button class="botao botao--suave" type="button" id="botaoDiminuir">Diminuir fonte</button>
+        <button class="botao botao--suave" type="button" id="botaoLer">Ler página (voz)</button>
+        <button class="botao botao--suave" type="button" id="botaoParar">Parar leitura</button>
+      </div>
+
+      <p class="ajuda" style="margin:10px 0 0;">
+        Dica: use TAB para navegar e Enter/Espaço para ativar botões.
+      </p>
+    </div>
+
+    <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
+      aria-controls="painelAcessibilidade">
+      <img src="img/Logo acessibilidade.png" alt="img-acessibilidade">
+    </button>
+  </div>
+
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+    </div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+  <script src="acessibilidade/acessibilidade.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
