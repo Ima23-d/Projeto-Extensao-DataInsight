@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DataInsight • Contato</title>
   <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
   <header class="barra-topo" role="banner">
     <div class="container barra-topo__interno">
-      <a class="marca" href="home.html" aria-label="DataInsight - Início">
+      <a class="marca" href="/home" aria-label="DataInsight - Início">
         <span class="marca__simbolo" aria-hidden="true">
           <i class="fa-solid fa-chart-column"></i>
         </span>
@@ -20,8 +21,8 @@
       </a>
 
       <nav class="navegacao" aria-label="Navegação principal">
-        <a href="home.html">Início</a>
-        <a href="contato.html" aria-current="page">Contato</a>
+        <a href="/home">Início</a>
+        <a href="/contato" aria-current="page">Contato</a>
       </nav>
     </div>
   </header>
@@ -102,7 +103,7 @@
 
     <button id="alternarAcessibilidade" class="acessibilidade-alternar" type="button" aria-expanded="false"
       aria-controls="painelAcessibilidade">
-      <img src="img/Logo acessibilidade.png" alt="ícone de acessibilidade">
+      <img src="{{url_for('static', filename='images/Logo acessibilidade.png')}}" alt="img-acessibilidade">
     </button>
   </div>
 
@@ -119,6 +120,8 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 
+  <script src="{{ url_for('static', filename='js/acessibilidade.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script src="acessibilidade/acessibilidade.js"></script>
   <script src="js/script.js"></script>
 </body>

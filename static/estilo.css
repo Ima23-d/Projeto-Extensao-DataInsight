@@ -1,0 +1,498 @@
+/* ============================
+   DataInsight
+   ============================ */
+
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* ============================
+   VARIÁVEIS GLOBAIS
+   ============================ */
+:root {
+  --primaria: #3B82F6;
+  --fundo: #F9FAFB;
+  --texto: #111827;
+  --suave: #6B7280;
+  --borda: #E5E7EB;
+  --cartao: #FFFFFF;
+  --sucesso: #16A34A;
+  --perigo: #DC2626;
+
+  --fonte: "Inter", sans-serif;
+
+  --esp1: 8px;
+  --esp2: 16px;
+  --esp3: 24px;
+  --esp4: 32px;
+
+  --raio: 8px;
+  --sombra: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  --container: 1200px;
+  --barra-topo: 72px;
+
+  /* Escala dinâmica de fonte */
+  --escala-fonte: 1;
+}
+
+/* ============================
+   DARK MODE
+   ============================ */
+.tema-escuro {
+  --fundo: #000000;
+  --texto: #F9FAFB;
+  --suave: #CBD5E1;
+  --borda: #334155;
+  --cartao: #1d1d1d;
+  --primaria: #3B82F6;
+
+}
+
+
+/* ============================
+   RESET
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte);
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+
+  /* Fonte dinâmica */
+  font-size: calc(16px * var(--escala-fonte));
+}
+
+/* ============================
+   CONTAINER
+   ============================ */
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+.rodape__interno{
+  background-color:#1a1a1a;
+  justify-content:center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction:column;
+  padding:20px;
+  color:white;
+}
+.rodape__interno a{
+  color: var(--primaria);
+
+}
+
+/* ============================
+   BARRA DE TOPO
+   ============================ */
+.barra-topo {
+  height: var(--barra-topo);
+  border-bottom: 1px solid var(--borda);
+  background: var(--cartao);
+}
+
+.barra-topo__interno {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--texto);
+}
+
+.marca__simbolo {
+  width: 36px;
+  height: 36px;
+  background: var(--primaria);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+}
+
+.navegacao {
+  display: flex;
+  gap: 12px;
+}
+
+.navegacao a {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.navegacao a[aria-current="page"] {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--primaria);
+}
+
+/* ============================
+   BOTÕES
+   ============================ */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--cartao);
+  font-size: 18px;
+  cursor: pointer;
+}
+.botao:hover {
+  background: #2d65be;
+  transition: 0.2s;
+}
+
+.botao--primario {
+  background: var(--primaria);
+  border: none;
+  color: white;
+}
+
+.botao--delet {
+  background: var(--perigo);
+  border: 1px solid #6b728066;
+  color: white;
+}
+
+.botao--select-proximo{
+  color: white;
+  background-color: var(--primaria);
+}
+
+.botao--select-voltar {
+  color: var(--texto);
+}
+.botao--select-voltar:hover {
+  background-color: rgba(59, 130, 246, 0.7);
+  transition: 1s;
+  
+}
+
+.botao--icone {
+  width: 44px;
+  height: 44px;
+}
+
+.botao-func{
+  color: var(--texto);
+}
+
+.acoes a{
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.checkbox{
+  transform: scale(1.3);
+}
+
+/* ============================
+   FORMULÁRIOS
+   ============================ */
+.campo {
+  display: grid;
+  gap: 6px;
+}
+
+.entrada,
+.selecao,
+.area-texto {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--cartao);
+  font-family: var(--fonte);
+  color: var(--texto);
+}
+
+.area-texto {
+  min-height: 120px;
+}
+.ajuda a{
+    color: var(--primaria);
+      text-decoration: none;
+}
+.obrigatorio::after{
+  content: " *";
+  color: red;
+}
+/* ============================
+   PÁGINA
+   ============================ */
+.pagina {
+  padding: var(--esp4) 0;
+}
+
+.pagina__cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--esp3);
+}
+
+.h1 {
+  font-size: calc(32px * var(--escala-fonte));
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: calc(24px * var(--escala-fonte));
+  font-weight: 600;
+}
+
+.p {
+  color: var(--suave);
+}
+
+/* ============================
+   GRID
+   ============================ */
+.grade {
+  display: grid;
+  gap: var(--esp3);
+}
+
+.grade--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grade--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grade--4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* ============================
+   CARTÃO
+   ============================ */
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--esp2);
+  box-shadow: var(--sombra);
+
+}
+
+.cartao__meta{
+  font-weight: bold;
+}
+
+cartao__descricao{
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+/* ============================
+   TELA DE LOGIN / CADASTRO
+   ============================ */
+.autenticacao {
+  min-height: calc(100vh - var(--barra-topo));
+  display: grid;
+  place-items: center;
+  padding: var(--esp4) 0;
+}
+
+.autenticacao__cartao {
+  width: 480px;
+}
+
+.autenticacao__titulo {
+  font-size: calc(32px * var(--escala-fonte));
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.autenticacao__subtitulo {
+  color: var(--suave);
+  margin-bottom: var(--esp3);
+}
+
+.autenticacao__links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: calc(14px * var(--escala-fonte));
+}
+
+.autenticacao .botao {
+  width: 100%;
+}
+
+.autenticacao__links a{
+  color: var(--primaria);
+  text-decoration: none;
+}
+
+.linha a{
+  color: var(--primaria);
+}
+
+/* ============================
+   ACESSIBILIDADE
+   ============================ */
+.acessibilidade-flutuante {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+
+.acessibilidade-alternar {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--primaria);
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.acessibilidade-painel {
+  margin-top: 10px;
+  width: 260px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--primaria);
+  color: white;
+  display: none;
+}
+
+.acessibilidade-painel.aberto {
+  display: block;
+}
+
+.acessibilidade-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acessibilidade-acoes .botao {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.corpo-alto-contraste .acessibilidade-painel,
+.corpo-alto-contraste .acessibilidade-alternar {
+  background: black;
+  border: 2px solid white;
+}
+
+/* ============================
+   CLASSES DE TAMANHO DE FONTE
+   ============================ */
+.fonte-pequena {
+  --escala-fonte: 0.9;
+}
+
+.fonte-media {
+  --escala-fonte: 1;
+}
+
+.fonte-grande {
+  --escala-fonte: 1.2;
+}
+
+.fonte-extra-grande {
+  --escala-fonte: 1.35;
+}
+
+/* ============================
+   TABELA COMPLETA
+   ============================ */
+
+.tabela-envoltoria {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  border: 1px solid var(--borda);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cartao);
+}
+
+thead {
+  background: rgba(229, 231, 235, 0.3);
+}
+
+tr a{
+  text-decoration: none;
+  color: var(--primaria);
+}
+
+th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--suave);
+  border-bottom: 1px solid var(--borda);
+}
+
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.95rem;
+}
+
+
+tbody tr:nth-child(even) {
+  background: rgba(229, 231, 235, 0.15);
+}
+
+
+tbody tr:hover {
+  background: rgba(37, 99, 235, 0.08);
+  transition: 0.2s;
+}
+
+.status-sucesso {
+  color: var(--sucesso);
+  font-weight: 600;
+}
+
+.status-perigo {
+  color: var(--perigo);
+  font-weight: 600;
+}
+
+/* ============================
+   IMAGEMS
+   ============================ */
+
+   img{
+    width: 50px;
+    height: 50px;
+   }
+
